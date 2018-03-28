@@ -1,4 +1,6 @@
 # Collaboration Analysis
+A academic collaboration analyzer that discovers potential collaboration among scientists and researchers determining why some collaborations and topics are successful and why some are not trending built for Apache Hadoop MapReduce.
+
 ## Team
 * Adam Montano - Project Manager, Related Works Research, Data Analytics Programmer
 * Brandon Thai Nguyen - Systems Architect & Networking, Data Analytics Programmer
