@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<data>
+<article name="article1">
+<author>Alice</author>
+<author>Bob</author>
+<year>2005</year>
+</article>
+<article name="article2">
+<author>Alice</author>
+<author>Bob</author>
+<year>2006</year>
+</article>
+<article name="article3">
+<author>Alice</author>
+<author>Eve</author>
+<year>2005</year>
+</article>
+<article name="article4">
+<author>Alice</author>
+<author>Eve</author>
+<year>2007</year>
+</article>
+<article name="article5">
+<author>Eve</author>
+<year>2005</year>
+</article>
+</data>

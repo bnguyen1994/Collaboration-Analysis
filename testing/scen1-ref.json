@@ -1,0 +1,5 @@
+{"authors":["Alice","Bob"],"title":"article1","references":["a6e6"],"year":2005,"id":"e401"}
+{"authors":["Alice","Bob"],"title":"article2","references":["e401","a6e6"],"year":2006,"id":"d345"}
+{"authors":["Alice","Eve"],"title":"article3","references":["ccc1"],"year":2005,"id":"df14"}
+{"authors":["Alice","Eve"],"title":"article4","references":["e401","a636","ccc1"],"year":2005,"id":"ff25"}
+{"authors":["Eve"],"title":"article5","references":["ddf14"],"year":2005,"id":"ae5d"}
