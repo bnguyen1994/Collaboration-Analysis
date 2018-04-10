@@ -49,5 +49,9 @@
             <name>yarn.nodemanager.vmem-check-enabled</name>
             <value>false</value>
     </property>
-
+<!-- Temp Location -->
+    <property>
+            <name>yarn.nodemanager.local-dirs</name>
+            <value>/home/hadoop/hadoop/localtemp</value>
+    </property>
 </configuration>
