@@ -29,6 +29,6 @@
 
     <property>
             <name>dfs.replication</name>
-            <value>6</value>
+            <value>1</value>
     </property>
 </configuration>
