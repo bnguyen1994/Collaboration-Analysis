@@ -1,0 +1,12 @@
+This is a list of things that need to be done.
+
+- Refine cloutCounter.py to search for a given article ID rather than having it be hardcoded as it is now
+
+- Implement effective multithreading for xmlGraph.py
+
+- Use NetworkX to convert the XML data into Giraph readable edge list
+
+- Implement a MR job in python that can find n where a collaboration between two authors is their nth collaboration (i.e. given some collaboration, is this their 3rd, 4th,.. collaboration?)
+
+- Setup use for AWS
+
