@@ -12,7 +12,6 @@ A academic collaboration analyzer that discovers potential collaboration among s
 * Show “success” of a researcher(s)/topic
 
 ## Challenges & Motivation
-* Learn Python
 * Deploy Hadoop on a six-node cluster
 * Apply knowledge learned from Big Data class
 * Obtain first-hand experience with Hadoop clustering
