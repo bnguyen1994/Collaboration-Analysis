@@ -1,16 +1,28 @@
 import xml.etree.ElementTree as ET
 import time
-from multiprocessing import Pool as ThreadPool
+import multiprocessing
 
+
+#represet xml data as tree
 tree = ET.parse('scen1.xml')
 root = tree.getroot()
 
+'''
+in: xml element 'article'
+out: list of authors in article
+'''
 def getCollabs(article):
     authors = list()
+
+    #find all instances of 'author' in article
     authorsInArticle = article.findall('author')
 
+    #we only care about articles with multiple authors
     if len(authorsInArticle) > 1:
+
         for author in authorsInArticle:
+
+            #add author string to list
             authors.append(author.text)
 
         return authors
@@ -29,13 +41,20 @@ def getEdges():
 
     return edges
 
+'''
+in:
+out: edge list format of collabs
+'''
 def getEdgesPar():
-    pool = ThreadPool(5)
+    #create pool of n threads
+    pool = multiprocessing.Pool()
+
+    #apply getCollabs function to all articles in xml file
     collabs = pool.map(getCollabs,root.findall('article'))
+
     pool.close()
     pool.join()
     return collabs
-
 
 #Calculate Mulithread Time
 start = time.time()
