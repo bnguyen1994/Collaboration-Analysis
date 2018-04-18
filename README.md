@@ -4,7 +4,7 @@ A academic collaboration analyzer that discovers potential collaboration among s
 ## Team
 * Adam Montano - Project Manager, Related Works Research, Data Analytics Programmer
 * Brandon Thai Nguyen - Systems Architect & Networking, Data Analytics Programmer
-* Gabriel Fukumoto - XML Parser, Data Analytics Programmer
+* Gabriel Fukumoto - Data Analytics Programmer
 
 ## Objective
 * Find correlations between authors and their collaborations
