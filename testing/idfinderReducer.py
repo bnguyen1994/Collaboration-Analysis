@@ -12,8 +12,6 @@ for line in sys.stdin:
     if article == targetArticle:
         targetIdNum = idNum
         print idNum
-        #check to see if idNum copied over to targetIdNum
-        print targetIdNum
 
     else:
         continue
