@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 import sys
 
-targetArticle = 'e401'
-targetIdNum = 0
+targetArticle = 'article1'
+targetIdNum = ''
 
 # Process each key-value pair from the mapper
 for line in sys.stdin:
@@ -11,6 +11,10 @@ for line in sys.stdin:
 
     if article == targetArticle:
         targetIdNum = idNum
+        print idNum
+        #check to see if idNum copied over to targetIdNum
+        print targetIdNum
+
     else:
         continue
 
