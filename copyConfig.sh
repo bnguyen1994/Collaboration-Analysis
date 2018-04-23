@@ -1,7 +1,7 @@
 #/bin/bash
 
-for node in node1 node2 node3 node4 node5; do
-    scp /etc/hadoop/* $node:/etc/hadoop/;
+for node in Hadoop-Node1 Hadoop-Node2 Hadoop-Node3 Hadoop-Node4 Hadoop-Node5; do
+    scp /home/hadoop/hadoop/etc/hadoop/* $node:/home/hadoop/hadoop/etc/hadoop/;
 done
 
 echo "CONFIGS COPIED"
