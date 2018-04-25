@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 import sys
-
-idSearch = 'e401'
+import re
 
 # Read each line from stdin
 for line in sys.stdin:
 
-  # Get the words in each line
-  exists = line.count(idSearch)
+  ref = re.search(r'references":"([a-zA-Z0-9]*)"',line).group(1)
+  idNum = re.search(r'id":"([a-zA-Z0-9]*)"',line).group(1)
 
-  # Generate the count for each word
-  print '{0}\t{1}'.format(idSearch, exists)
+  print '{0}\t{1}'.format(idNum, ref)
