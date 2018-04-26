@@ -1,3 +1,5 @@
+from math import sqrt
+
 #===================================Data============================#
 #open the files we calculated with hadoop
 collabCount = open('collabCount','r')
@@ -37,27 +39,66 @@ authorList.close()
 
 #=================================Functions========================#
 
+#get all authors of an article
 def getAuthors(article):
+    #remove quotation marks
     authors = articleAuthorDict[article].replace('"','')
+    #separate by colon delimite
     authors = authors.split(':')
+    #join the by a space
     authors = ' '.join(authors)
 
     return authors
 
+#get the number times authors of article have collabed
 def getAuthorCollabs(article):
     authors = articleAuthorDict[article]
     return collabDict[authors]
 
-def getStdDev(article):
-    return
+def getAuthorCitationsPre(article):
+    #get authors from article
+    authors = articleAuthorDict[article].split(':')
+    #get article date
+    date = articleYearDict[article]
+    #get articles for each author prior to date
+    authorCitations = list()
+    for author in authors:
+        articlesOfAuthor = articlesByAuthor[author].split(':')
+        citationSum = 0
+        for entry in articlesOfAuthor:
+            if articleYearsDict[entry] <= date:
+                citationSum += citationDict[entry]
 
-def getAvgCitesBefore(article):
-    return
+        authorCitations.append(citationSum)
 
-def getAvgCitesAfter(article):
-    return
+    return authorCitations
 
+def getAuthorCitationsPost(article):
+    #get authors from article
+    authors = articleAuthorDict[article].split(':')
+    #get article date
+    date = articleYearDict[article]
+    #get articles for each author prior to date
+    authorCitations = list()
+    for author in authors:
+        articlesOfAuthor = articlesByAuthor[author].split(':')
+        citationSum = 0
+        for entry in articlesOfAuthor:
+            if articleYearsDict[entry] > date:
+                citationSum += citationDict[entry]
 
+        authorCitations.append(citationSum)
+
+    return authorCitations
+
+#get std dev of authors citations before article
+def getStdDev(authorCitations):
+    #calculate std dev of citations
+    mean = sum(authorCitations)/len(authorCitations)
+    diff = [x - mean for x in authorCitations]
+    sq_dif = [d ** 2 for d in diff]
+
+    return sqrt(sum(sq_dif)/len(authorCitations))
 #=================================Analysis=========================#
 
 #data will be saved to this list as an entry
@@ -76,22 +117,23 @@ for article in articleIdList:
     except KeyError:
         citations = 0
 
-#    print (article +','),authors,collabsBetweenAuthors,citations
-
-    #std dev of authors citations
-    stdDev = str(getStdDev(article) + ',')
 
     #avg citations of authors before this article
-    citesBefore = str(getAvgCitesBefore(article) + ',')
+    citesBefore = getAuthorCitationsPre(article)
+    AvgCitesBefore = str(sum(citesBefore)/len(citesBefore)) + ','
+
+    #std dev of authors citations
+    stdDev = str(getStdDev(citesBefore) + ',')
 
     #avg citations of authors after this article
-    citesAfter = str(getAvgCitesAfter(article))
+    citesAfter = getAuthorCitationsPost(article)
+    AvgCitesAfter = str(sum(citesAfter)/len(citesAfter)) + ','
 
     #save into string, delimited by a comma
     entry = str(authors + 
             collabsBetweenAuthors + 
             citations + 
             stdDev + 
-            citesBefore + 
-            citesAfter + '\n')
+            AvgcitesBefore + 
+            AvgcitesAfter + '\n')
     collabAnalysis.append(entry)
