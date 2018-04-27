@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 #/home/hadoop
 
 # Script to prompt the user for the mapred files and input and output files
