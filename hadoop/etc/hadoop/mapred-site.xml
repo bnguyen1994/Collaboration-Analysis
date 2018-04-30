@@ -23,18 +23,18 @@
     </property>
 
     <property>
-            <name>yarn.app.mapreduce.am.resource.mb</name>
-            <value>512</value>
+            <name>yarn.app.mapreduce.am.resource.memory-mb</name>
+            <value>4096</value>
     </property>
 
     <property>
-            <name>mapreduce.map.memory.mb</name>
-            <value>256</value>
+            <name>mapreduce.map.resource.memory-mb</name>
+            <value>1024</value>
     </property>
 
     <property>
-            <name>mapreduce.reduce.memory.mb</name>
-            <value>256</value>
+            <name>mapreduce.reduce.resource.memory-mb</name>
+            <value>1024</value>
     </property>
 
     <property>
@@ -50,4 +50,13 @@
             <value>HADOOP_MAPRED_HOME=/home/hadoop/hadoop</value>
     </property>
 
+<!--Compression-->
+    <property>
+            <name> mapreduce.map.output.compress</name> 
+            <value>true</value>
+    </property>
+    <property>
+            <name>mapreduce.map.output.compress.codec</name>
+            <value>org.apache.hadoop.io.compress.GzipCodec</value>
+    </property>
 </configuration>
