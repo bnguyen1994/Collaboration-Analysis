@@ -12,7 +12,7 @@ A academic collaboration analyzer that discovers potential collaboration among s
 * Show “success” of a researcher(s)/topic
 
 ## Challenges & Motivation
-* Deploy Hadoop on a six-node cluster
+* Deploy Apache Hadoop 3.1.0 and MPICHv2 on a six-node cluster
 * Apply knowledge learned from Big Data class
 * Obtain first-hand experience with Hadoop clustering
 
