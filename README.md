@@ -2,9 +2,9 @@
 A academic collaboration analyzer that discovers potential collaboration among scientists and researchers determining why some collaborations and topics are successful and why some are not trending built for Apache Hadoop MapReduce.
 
 ## Team
-* Adam Montano - Project Manager, Related Works Research, Data Analytics Programmer
-* Brandon Thai Nguyen - Systems Architect & Networking, Data Analytics Programmer
-* Gabriel Fukumoto - Data Analytics Programmer
+* Adam Montano - Project Manager, Related Works Research, MapReduce & MPI Programmer
+* Brandon Thai Nguyen - Systems Architect & Networking, MPI Programmer
+* Gabriel Fukumoto - MapReduce Programmer
 
 ## Objective
 * Find correlations between authors and their collaborations
